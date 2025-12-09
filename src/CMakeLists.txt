@@ -1,8 +1,11 @@
+
 cmake_minimum_required(VERSION 3.13)
 include(pico_sdk_import.cmake)
 project(vga4cpc-project C CXX ASM)
 
 pico_sdk_init()
+
+
 
 add_executable(vga4cpc)
 
@@ -17,6 +20,6 @@ pico_generate_pio_header(vga4cpc ${CMAKE_CURRENT_LIST_DIR}/pioasm/rgbin.pio)
 pico_generate_pio_header(vga4cpc ${CMAKE_CURRENT_LIST_DIR}/pioasm/vsyncgen.pio)
 
 target_sources(vga4cpc PRIVATE main.c test_screen.c test_screen.h vga_pio.c vga_pio.h cpc_pio.c cpc_pio.h constants.h mode_switch.c mode_switch.h vga_dma.c vga_dma.h cpc_dma.c cpc_dma.h)
-target_link_libraries(vga4cpc PRIVATE pico_stdlib hardware_pio hardware_dma)
+target_link_libraries(vga4cpc PRIVATE pico_stdlib hardware_pio hardware_dma hardware_clocks)
 
 pico_add_extra_outputs(vga4cpc)
