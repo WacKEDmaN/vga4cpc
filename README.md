@@ -1,6 +1,8 @@
 # vga4cpc
 VGA output for Amstrad CPC based on Raspberry Pi Pico.<br /> <br />
 
+Updated for pico-sdk 2.2, fixes border/background color issue
+
 <img src="./board.jpg" width=50% height=50%>
 
 The goal of this project was to build a scandoubler for Amstrad CPC that is cheap, simple to build and can handle the most popular tricks that Amstrad software does (e.g. smooth scroll) that standard scandoublers usually don't support.
